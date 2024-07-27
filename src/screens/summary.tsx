@@ -1,12 +1,5 @@
-import React, { useContext } from 'react';
-import {
-  View,
-  TouchableOpacity,
-  ViewStyle,
-  Pressable,
-  FlatList,
-  ScrollView,
-} from 'react-native';
+import React, {useContext} from 'react';
+import {View, ViewStyle, FlatList, ScrollView} from 'react-native';
 import {AppStackScreenProps} from '../navigators/AppNavigator';
 import {PieChart, ProgressChart} from 'react-native-chart-kit';
 import {AppConstants, Questionnaire} from '../utils/constants';
@@ -14,16 +7,15 @@ import {Spacer, Text} from '../components/atom';
 import {useStore} from '../store/store';
 import {AppColors} from '../theme/colors';
 import {Button, Preview} from '../components/molecules';
-import {Svg, Circle, Path} from 'react-native-svg';
-import { StatusText } from '../components/molecules/status';
-import { ThemeContext } from '../providers/themeProvider';
-import { Toggle } from '../components/molecules/toggle';
+import {StatusText} from '../components/molecules/status';
+import {ThemeContext} from '../providers/themeProvider';
+import {Toggle} from '../components/molecules/toggle';
 
 interface SummaryProps extends AppStackScreenProps<'Summary'> {}
 
 export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
   const userOptions = useStore((state: any) => state.userOptions);
-  const updateOptions = useStore((state: any) => state.updateOptions);
+
   const userReportVal = userOptions.reduce(
     (accumulator: any, currentValue: any) => accumulator + currentValue,
     0,
@@ -33,7 +25,7 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
     labels: ['User Profile'], // optional
     data: [userReportVal / (4 * 6)],
   };
-  console.log(userOptions)
+  console.log(userOptions);
   const data = [
     {
       name: 'Very risky',
@@ -66,8 +58,13 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
   ];
 
   return (
-    <ScrollView horizontal={false} style={[$settingsContainer,{backgroundColor:themeContext?.theme.backgroundColor}]}>
-    <Toggle/>
+    <ScrollView
+      horizontal={false}
+      style={[
+        $settingsContainer,
+        {backgroundColor: themeContext?.theme.backgroundColor},
+      ]}>
+      <Toggle />
       <View
         style={{
           borderRadius: 8,
@@ -86,7 +83,7 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
           accessor={'points'}
           backgroundColor={'transparent'}
           center={[0, 0]}
-          paddingLeft='0'
+          paddingLeft="0"
         />
         <ProgressChart
           data={avgData}
@@ -102,10 +99,11 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
             color: (opacity = 1) => {
               if (Math.ceil(userReportVal / 6) == 1)
                 return `rgba(255, 0, 0, ${opacity})`;
-              if (Math.ceil(userReportVal / 6) == 2)
+              if (
+                Math.ceil(userReportVal / 6) == 2 ||
+                Math.ceil(userReportVal / 6) == 3
+              )
                 return `rgba(255, 99, 71, ${opacity})`;
-              if (Math.ceil(userReportVal / 6) == 3)
-                return `rgba(255, 165, 0, ${opacity})`;
               else return `rgba(26, 255, 146, ${opacity})`;
             },
             strokeWidth: 2, // optional, default 3
@@ -119,15 +117,15 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
       <Spacer height={8} />
       <Button
         onPress={() => {
-            navigation.reset({
-                index: 0,
-                routes: [{ name: 'Intro' }],
-              });
+          navigation.reset({
+            index: 0,
+            routes: [{name: 'Intro'}],
+          });
         }}
         children={'Home'}
       />
       <Spacer height={10} />
-      <View style={{ borderRadius: 8, padding: 8}}>
+      <View style={{borderRadius: 8, padding: 8}}>
         <Text style={{fontSize: 20, fontWeight: 'bold'}}>Preview</Text>
         <Spacer height={8} />
         <FlatList
@@ -140,7 +138,8 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
               </Text>
               <Preview
                 ans={
-                  Questionnaire[index].options.filter(e => e.points == item)[0].ans
+                  Questionnaire[index].options.filter(e => e.points == item)[0]
+                    .ans
                 }
                 status={item}
               />
@@ -155,31 +154,6 @@ export const SummarySC: React.FC<SummaryProps> = ({navigation}) => {
   );
 };
 
-
-
-
-
-
-const $statusStyle: ViewStyle = {
-  height: 10,
-  width: 10,
-  borderRadius: 5,
-  margin: 4,
-  alignSelf: 'center',
-};
-
-const $statusContainer: ViewStyle = {
-  flexDirection: 'row',
-  alignItems: 'center',
-  alignSelf: 'flex-start',
-  flex: 1,
-};
-const $statusView: ViewStyle = {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex:1/2.5
-  };
 const $settingsContainer: ViewStyle = {
   backgroundColor: 'white',
   alignSelf: 'flex-start',

@@ -17,10 +17,11 @@ export const StatusText: React.FC<ButtonProps> = props => {
               color: AppColors.danger,
             },
           ]}>
-          Your Profile is Very risk-averse {props.value.toFixed(2)}
+          Your Profile Score :- {props.value.toFixed(2)} High Risk
         </Text>
       );
     case 2:
+    case 3:
       return (
         <Text
           style={[
@@ -29,19 +30,7 @@ export const StatusText: React.FC<ButtonProps> = props => {
               color: AppColors.warning,
             },
           ]}>
-          Your Profile is Somewhat risk-averse {props.value.toFixed(2)}
-        </Text>
-      );
-    case 3:
-      return (
-        <Text
-          style={[
-            $statusTextStyle,
-            {
-              color: AppColors.neutral,
-            },
-          ]}>
-          Your Profile is Neutral to risk-tolerant {props.value.toFixed(2)}
+          Your Profile Score :- {props.value.toFixed(2)} Medium Risk
         </Text>
       );
     case 4:
@@ -53,7 +42,7 @@ export const StatusText: React.FC<ButtonProps> = props => {
               color: AppColors.success,
             },
           ]}>
-          Your Profile is Very risk-tolerant {props.value.toFixed(2)}
+          Your Profile Score :- {props.value.toFixed(2)} Low Risk
         </Text>
       );
     default:

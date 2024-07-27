@@ -1,13 +1,19 @@
 import React, {useContext, useEffect} from 'react';
-import {View, ViewStyle, Image, ImageStyle, BackHandler, Alert} from 'react-native';
+import {
+  View,
+  ViewStyle,
+  Image,
+  ImageStyle,
+  BackHandler,
+  Alert,
+} from 'react-native';
 import {AppConstants} from '../utils/constants';
 import {Text} from '../components/atom';
 import {Button} from '../components/molecules';
 import {AppStackScreenProps} from '../navigators/AppNavigator';
-import {CommonActions} from '@react-navigation/native';
 import {ThemeContext} from '../providers/themeProvider';
 import {Toggle} from '../components/molecules/toggle';
-import Animated, { FadeIn, FadeInDown, FadeInUp } from 'react-native-reanimated';
+import Animated, {FadeInDown} from 'react-native-reanimated';
 
 interface IntroProps extends AppStackScreenProps<'Intro'> {}
 
@@ -17,13 +23,13 @@ export const Intro: React.FC<IntroProps> = ({navigation}) => {
 
   function handleBackButtonClick() {
     Alert.alert('Exit', 'Exit Questionnaire ?', [
-        {
-          text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
-          style: 'cancel',
-        },
-        {text: 'OK', onPress: () => BackHandler.exitApp()},
-      ]);
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => BackHandler.exitApp()},
+    ]);
     return true;
   }
 
@@ -40,8 +46,14 @@ export const Intro: React.FC<IntroProps> = ({navigation}) => {
     <View style={$introContainer}>
       <Toggle />
       <Image source={introImg} style={$introImg} />
-      <View style={[{backgroundColor: themeContext?.theme.backgroundColor}, $container]}>
-        <Animated.Text entering={FadeInDown.duration(1000)}  style={{color: 'red', fontSize: 42}}>
+      <View
+        style={[
+          {backgroundColor: themeContext?.theme.backgroundColor},
+          $container,
+        ]}>
+        <Animated.Text
+          entering={FadeInDown.duration(1000)}
+          style={{color: 'red', fontSize: 42}}>
           Risk <Text>Profile Questionnaire</Text>
         </Animated.Text>
         <Button
