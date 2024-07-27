@@ -7,7 +7,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ![sc1Dark](https://github.com/user-attachments/assets/c560ec29-c90e-46cb-96ab-7b1d38694118)
 ![Screenshot_1722121780](https://github.com/user-attachments/assets/3c132b66-622c-4757-bc0c-938606888baa)
 ![sc2Dark](https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7)
-<img alt="" width="100" src="[https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png](https://github.com/user-attachments/assets/3ed98365-d6df-423e-9366-ad379168dd86)">
+<img alt="" src="[https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png](https://github.com/user-attachments/assets/3ed98365-d6df-423e-9366-ad379168dd86)"  width="48">
 
 # Getting Started
 
