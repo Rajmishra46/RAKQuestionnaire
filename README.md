@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ## Sample Screenshot
 
-<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="48" />
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="100" />
 
 # Getting Started
 
