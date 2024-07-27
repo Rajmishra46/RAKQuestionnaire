@@ -2,8 +2,12 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ## Sample Screenshot
 
-<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="100" />
-
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="200" />
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="200" />
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="200" />
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="200" />
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="200" />
+<img src="https://github.com/user-attachments/assets/31ea0fe8-bd02-4779-ad52-ab617ac8cda7"  width="200" />
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
